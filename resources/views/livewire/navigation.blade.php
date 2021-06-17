@@ -1,13 +1,8 @@
 @php($navLink = [
-['role'=>['admin'], 'href'=>'/dashboard', 'name'=>'dashboard', 'text'=>'Dashboard' ],
-['role'=>['admin'], 'href'=>'/users', 'name'=>'users', 'text'=>'Users' ],
-['role'=>['admin'], 'href'=>'/posts', 'name'=>'posts', 'text'=>'posts' ],
-['role'=>['admin'], 'href'=>'/jobs', 'name'=>'jobs', 'text'=>'jobs' ],
-['role'=>['admin'], 'href'=>'/roles', 'name'=>'roles.index', 'text'=>'roles' ],
-['role'=>['admin'], 'href'=>'/legal', 'name'=>'legal.index', 'text'=>'legal' ],
-['role'=>['admin'], 'href'=>'/skills', 'name'=>'skills.index', 'text'=>'skills' ],
-['role'=>['admin'], 'href'=>'/focal-points', 'name'=>'focal-points.index', 'text'=>'focal-points']
-
+['role'=>['super-admin'], 'href'=>'/dashboard', 'name'=>'dashboard', 'text'=>'Dashboard' ],
+['role'=>['super-admin'], 'href'=>'/users', 'name'=>'users', 'text'=>'Users' ],
+['role'=>['super-admin'], 'href'=>'master/roles', 'name'=>'roles', 'text'=>'roles' ],
+['role'=>['super-admin'], 'href'=>'/permissions', 'name'=>'perrmissions.index', 'text'=>'perrmissions' ],
 ])
 
 
@@ -57,10 +52,14 @@
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 
                         @foreach ($navLink as $link)
-                        <a href="{{$link['href']}}"
+                           @auth
+                           @if(auth()->user()->hasAnyRole($link['role']))
+                           <a href="{{$link['href']}}"
                             class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-50 hover:text-gray-500"
                             aria-current="page"
                             active="{{request()->routeIs($link['name'])}}">{{ __($link['text']) }}</a>
+                            @endif
+                           @endauth
                         @endforeach
 
                     </div>
