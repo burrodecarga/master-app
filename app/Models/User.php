@@ -12,7 +12,6 @@ use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
-
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -61,4 +60,24 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function adminlte_image(){
+        return $this->profile_photo_url;
+    }
+
+    public function adminlte_desc(){
+        return 'Master';
+    }
+
+    public function adminlte_profile_url(){
+        return 'profile';
+    }
+
+    public function condominios(){
+      return $this->hasMany(Condominio::class);
+    }
+
+    public function apartments(){
+        return $this->hasMany(Apartment::class);
+    }
 }
