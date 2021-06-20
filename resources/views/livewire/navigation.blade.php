@@ -1,7 +1,7 @@
 @php($navLink = [
 ['role'=>['super-admin'], 'href'=>'/dashboard', 'name'=>'dashboard', 'text'=>'Dashboard' ],
-['role'=>['super-admin'], 'href'=>'/users', 'name'=>'users', 'text'=>'Users' ],
-['role'=>['super-admin'], 'href'=>'master/roles', 'name'=>'roles', 'text'=>'roles' ],
+['role'=>['super-admin'], 'href'=>'/master/users', 'name'=>'users', 'text'=>'Users' ],
+['role'=>['super-admin'], 'href'=>'/master/roles', 'name'=>'roles', 'text'=>'roles' ],
 ['role'=>['super-admin'], 'href'=>'/permissions', 'name'=>'perrmissions.index', 'text'=>'perrmissions' ],
 ])
 
