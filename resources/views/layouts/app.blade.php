@@ -12,8 +12,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
     <!-- Styles -->
+
+
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <link rel="stylesheet" href="{{asset('css/all.min.css')}}" defer>
+    <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
+
 
 
 
@@ -23,6 +26,9 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="{{ asset('js/all.min.js') }}" defer></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="{{ asset('js/jquery-3.5.1.js') }}" defer></script>
+    <script src="{{ asset('js/jquery.dataTables.min.js') }}" defer></script>
+    <script src="{{ asset('js/dataTables.bootstrap4.min.js') }}" defer></script>
 </head>
 
 <body class="font-sans antialiased">
@@ -42,6 +48,7 @@
 
         <!-- Page Content -->
         <main>
+            @include('flash-message')
             {{ $slot }}
         </main>
     </div>
@@ -51,6 +58,9 @@
     @livewireScripts
 
 
+
+
+
     <script>
         livewire.on('alert',function(message){
                 Swal.fire(
@@ -58,9 +68,9 @@
                  message,
                  'success')
             })
-      </script>
-      <script>
-          window.addEventListener('eliminarRole',event=>{
+    </script>
+    <script>
+       window.addEventListener('eliminarRole',event=>{
             Swal.fire({
   title: 'Are you sure?',
   text: "You won't be able to revert this!",
@@ -81,7 +91,7 @@
 })
           })
 
-       </script>
+    </script>
 
 </body>
 
