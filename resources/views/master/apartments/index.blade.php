@@ -73,7 +73,7 @@
 <script>
     $(document).ready(function() {
     $('#apartments').DataTable({
-        "columnDefs": [{ "targets": [2], "orderable": false }],
+        "columnDefs": [{ "targets": [3], "orderable": false }],
          "stateSave": true
     });
 

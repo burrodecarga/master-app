@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Master;
 
 use App\Http\Controllers\Controller;
 use App\Models\Bank;
+use App\Models\Condominio;
 use Illuminate\Http\Request;
 
 class BankController extends Controller
@@ -15,7 +16,8 @@ class BankController extends Controller
      */
     public function index()
     {
-        //
+        $banks = Bank::orderBy('name')->get();
+        return view('master.banks.index',compact('banks'));
     }
 
     /**
@@ -25,7 +27,10 @@ class BankController extends Controller
      */
     public function create()
     {
-        //
+        $bank = new Bank();
+        $condominios = Condominio::orderBy('name')->get();
+        return view('master.banks.create',compact('condominios','bank'));
+
     }
 
     /**
@@ -36,7 +41,16 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' =>'required',
+            'ctta' =>'required|unique:banks',
+            'condominio_id'=>'integer|required',
+            'owner'=>'required'
+        ]);
+        $bank = Bank::create($request->all());
+        return redirect()->route('banks.index')->with('success','Item created successfully!');
+
+
     }
 
     /**
@@ -58,7 +72,8 @@ class BankController extends Controller
      */
     public function edit(Bank $bank)
     {
-        //
+        $condominios = Condominio::orderBy('name')->get();
+        return view('master.banks.edit',compact('condominios','bank'));
     }
 
     /**
@@ -70,7 +85,15 @@ class BankController extends Controller
      */
     public function update(Request $request, Bank $bank)
     {
-        //
+        $request->validate([
+            'name' =>'required',
+            'ctta' =>'required|unique:banks,ctta,'.$bank->id,
+            'condominio_id'=>'integer|required',
+            'owner'=>'required'
+        ]);
+        $bank->update($request->all());
+        return redirect()->route('banks.index')->with('success','Item updated successfully!');
+
     }
 
     /**
@@ -81,6 +104,8 @@ class BankController extends Controller
      */
     public function destroy(Bank $bank)
     {
-        //
+        $bank->delete();
+        return redirect()->route('banks.index')->with('success','Item deleted successfully!');
+
     }
 }

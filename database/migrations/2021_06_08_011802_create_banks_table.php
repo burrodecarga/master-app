@@ -15,7 +15,7 @@ class CreateBanksTable extends Migration
     {
         Schema::create('banks', function (Blueprint $table) {
             $table->id();
-            $table->string('bank');
+            $table->string('name');
             $table->string('ctta');
             $table->string('owner');
             $table->unsignedBigInteger('condominio_id');
