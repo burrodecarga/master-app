@@ -2,7 +2,13 @@
 ['role'=>['super-admin'], 'href'=>'/dashboard', 'name'=>'dashboard', 'text'=>'Dashboard' ],
 ['role'=>['super-admin'], 'href'=>'/master/users', 'name'=>'users', 'text'=>'Users' ],
 ['role'=>['super-admin'], 'href'=>'/master/roles', 'name'=>'roles', 'text'=>'roles' ],
-['role'=>['super-admin'], 'href'=>'/permissions', 'name'=>'perrmissions.index', 'text'=>'perrmissions' ],
+['role'=>['super-admin'], 'href'=>'/master/permissions', 'name'=>'perrmissions.index', 'text'=>'perrmissions' ],
+['role'=>['super-admin'], 'href'=>'/master/condominios', 'name'=>'condominios.index', 'text'=>'condominios' ],
+['role'=>['super-admin'], 'href'=>'/master/apartments', 'name'=>'apartments.index', 'text'=>'Apartamentos' ],
+['role'=>['super-admin'], 'href'=>'/master/banks', 'name'=>'banks.index', 'text'=>'Bancos' ],
+
+
+
 ])
 
 
@@ -55,7 +61,7 @@
                            @auth
                            @if(auth()->user()->hasAnyRole($link['role']))
                            <a href="{{$link['href']}}"
-                            class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-50 hover:text-gray-500"
+                            class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-500 hover:text-white"
                             aria-current="page"
                             active="{{request()->routeIs($link['name'])}}">{{ __($link['text']) }}</a>
                             @endif
