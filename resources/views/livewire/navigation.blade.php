@@ -5,7 +5,9 @@
 ['role'=>['super-admin'], 'href'=>'/master/permissions', 'name'=>'perrmissions.index', 'text'=>'perrmissions' ],
 ['role'=>['super-admin'], 'href'=>'/master/condominios', 'name'=>'condominios.index', 'text'=>'condominios' ],
 ['role'=>['super-admin'], 'href'=>'/master/apartments', 'name'=>'apartments.index', 'text'=>'Apartamentos' ],
-['role'=>['super-admin'], 'href'=>'/master/banks', 'name'=>'banks.index', 'text'=>'Bancos' ],
+
+['role'=>['admin'], 'href'=>'/admin', 'name'=>'admin.index', 'text'=>'admin' ],
+
 
 
 

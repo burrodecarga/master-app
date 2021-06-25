@@ -9,7 +9,7 @@ class Social extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','url','condominio_id'];
+    protected $fillable = ['name','url','condominio_id','tipo'];
 
     public function condominio(){
         return $this->belongsTo(Condominio::class);

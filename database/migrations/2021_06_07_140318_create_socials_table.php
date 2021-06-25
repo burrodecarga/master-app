@@ -17,6 +17,7 @@ class CreateSocialsTable extends Migration
         Schema::create('socials', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('tipo');
             $table->string('url');
             $table->unsignedBigInteger('condominio_id');
             $table->foreign('condominio_id')->references('id')->on('condominios')->onDelete('cascade');

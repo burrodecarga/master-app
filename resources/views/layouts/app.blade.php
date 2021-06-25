@@ -16,6 +16,9 @@
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('fontawesome-free-5.15.3-web/css/all.css')}}">
+    <link rel="stylesheet" href="{{asset('fontawesome-free-5.15.3-web/css/brands.css')}}">
+
 
 
 

@@ -83,12 +83,15 @@ class RoleSeeder extends Seeder
 
           $json =File::get("database/data/redes.json");
           $data = json_decode($json);
+
+          //dd($data);
+
           foreach ($data as $obj) {
            $brand = new Brand();
            $brand->name = $obj->name;
            $brand->icon = $obj->icon;
-           $brand->save();
-          }
+           $brand->tipo = $obj->tipo;
+           $brand->save();          }
 
 
       }

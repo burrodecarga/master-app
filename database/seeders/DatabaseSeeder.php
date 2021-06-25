@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
               'phone' =>'Condominio-phones '.$i,
               'mobil' =>'Condominio-mobil '.$i,
               'email' =>'condominio'.$i.'@gmail.com',
-              'logo'=>rand(9,12).'.png',
+            //   'logo'=>rand(9,12).'.png',
           ]);
 
           for ($j=0; $j <30 ; $j++) {

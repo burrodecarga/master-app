@@ -1,43 +1,53 @@
 [
     {
         "name": "Facebook   ",
-        "icon":"<i class='fab fa-facebook-f'></i>"
+        "icon": "<i class='fab fa-facebook-f'></i>",
+        "tipo": "fab fa-facebook-f"
     },
     {
         "name": "Youtube    ",
-        "icon":"<i class='fab fa-youtube'></i>"
+        "icon": "<i class='fab fa-youtube'></i>",
+        "tipo": "fab fa-youtube"
     },
     {
         "name": "WhatsApp   ",
-        "icon":"<i class='fab fa-whatsapp'></i>"
+        "icon": "<i class='fab fa-whatsapp'></i>",
+        "tipo": "fab fa-whatsapp"
     },
-
     {
         "name": "Messenger  ",
-        "icon":"<i class='fab fa-facebook-messenger'></i>"
+        "icon": "<i class='fab fa-facebook-messenger'></i>",
+        "tipo": "fab fa-facebook-messenger"
     },
     {
         "name": "WeChat     ",
-        "icon":"<i class='fab fa-weixin'></i>"
+        "icon": "<i class='fab fa-weixin'></i>",
+        "tipo": "fab fa-weixin"
     },
     {
         "name": "Instagram  ",
-        "icon":"<i class='fab fa-instagram'></i>"
+        "icon": "<i class='fab fa-instagram'></i>",
+        "tipo": "fab fa-instagram"
     },
     {
         "name": "QQ         ",
-        "icon":"<i class='fab fa-qq'></i>"
+        "icon": "<i class='fab fa-qq'></i>",
+        "tipo": "fab fa-qq"
+
     },
     {
         "name": "QZone      ",
-        "icon":"<i class='fab fa-quora'></i>"
+        "icon": "<i class='fab fa-quora'></i>",
+        "tipo": "fab fa-qq"
     },
     {
         "name": "Tik Tok    ",
-        "icon":"<i class='fab fa-tiktok'></i>"
+        "icon": "<i class='fab fa-tiktok'></i>",
+        "tipo": "fab fa-tiktok"
     },
     {
         "name": "Weibo      ",
-        "icon":"<i class='fab fa-weibo'></i>"
+        "icon": "<i class='fab fa-weibo'></i>",
+        "tipo": "fab fa-weibo"
     }
 ]
